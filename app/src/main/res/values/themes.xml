@@ -13,4 +13,19 @@
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
     </style>
+    <!-- créer le compossant titre par defaut -->
+    <style name="DefaultTextStyle">
+        <item name="android:textColor">@color/lightGray</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:fontFamily">@font/kanitblack</item>
+    </style>
+
+    <!-- créer le compossant titre par defaut -->
+    <style name="SubTitleTextStyle" parent="DefaultTextStyle">
+        <item name="android:textColor">@color/darkGray</item>
+    </style>
+    <!-- créer le compossant titre par defaut -->
+    <style name="TitleTextStyle" parent="SubTitleTextStyle">
+        <item name="android:textSize">24sp</item>
+    </style>
 </resources>
