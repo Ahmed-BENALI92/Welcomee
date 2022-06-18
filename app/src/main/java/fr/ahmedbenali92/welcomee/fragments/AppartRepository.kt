@@ -1,27 +1,32 @@
-package fr.ahmedbenali92.welcomee
+package fr.ahmedbenali92.welcomee.fragments
 
 
+import android.content.ContentValues.TAG
+import android.util.Log
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
-import fr.ahmedbenali92.welcomee.AppartRepository.Singleton.appartList
-import fr.ahmedbenali92.welcomee.AppartRepository.Singleton.databaseRef
+import fr.ahmedbenali92.welcomee.AppartModel
+import fr.ahmedbenali92.welcomee.fragments.AppartRepository.Singleton.appartList
+import fr.ahmedbenali92.welcomee.fragments.AppartRepository.Singleton.databaseRef
 
 
 //Cette classe va gerer la base de donnée firebase
 class AppartRepository {
 
     //on va utilisé le pattern singleton
-    object Singleton{
+    object Singleton {
         // se connecter a la référence "appartement"
-        val databaseRef = FirebaseDatabase.getInstance().getReference("appartements")
+        val database = FirebaseDatabase.getInstance("https://welcomee-9bd22-default-rtdb.firebaseio.com/")
+        val databaseRef = database.getReference("appartements")
+
 
         //creer un liste pour stocker nos appartement
         val appartList = arrayListOf<AppartModel>()
     }
 
-    fun updateData(){
+    fun updateData(callback : () -> Unit){
         //récuperer les données et les injecter dans notre liste appartement
         databaseRef.addValueEventListener(object : ValueEventListener {
             override fun onDataChange(snapshot: DataSnapshot) {
@@ -39,7 +44,13 @@ class AppartRepository {
                         appartList.add(appartement)
 
                     }
+                    // This method is called once with the initial value and again
+                    // whenever data at this location is updated.
+                    //val value = snapshot.getValue()
+                    //Log.d(TAG, "Ahmed Value is: " + appartList.size)
                 }
+                //actionner le callback
+                callback()
             }
 
             override fun onCancelled(p0: DatabaseError) {

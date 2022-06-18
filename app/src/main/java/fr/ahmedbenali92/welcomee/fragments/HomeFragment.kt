@@ -1,17 +1,18 @@
 package fr.ahmedbenali92.welcomee.fragments
 
+import android.content.ContentValues.TAG
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.RecyclerView
 import fr.ahmedbenali92.welcomee.MainActivity
-import fr.ahmedbenali92.welcomee.AppartModel
 import fr.ahmedbenali92.welcomee.R
 import fr.ahmedbenali92.welcomee.adapter.AppartAdapter
 import fr.ahmedbenali92.welcomee.adapter.appartitemDecoration
-import fr.ahmedbenali92.welcomee.AppartRepository.Singleton.appartList
+import fr.ahmedbenali92.welcomee.fragments.AppartRepository.Singleton.appartList
 
 class HomeFragment(
     private val context : MainActivity
@@ -24,6 +25,8 @@ class HomeFragment(
         //recuperer le recyclerview
         val horizontalRecyclerView = view?.findViewById<RecyclerView>(R.id.horizontal_recycler_view)
         if (horizontalRecyclerView != null) {
+
+            //Log.d(TAG, "ahmed la Value is: " + appartList.size)
             horizontalRecyclerView.adapter = AppartAdapter(context ,appartList,R.layout.item_horizental_plant)
         }
 

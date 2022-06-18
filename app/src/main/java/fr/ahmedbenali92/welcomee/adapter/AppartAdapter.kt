@@ -1,6 +1,8 @@
 package fr.ahmedbenali92.welcomee.adapter
 
+import android.content.ContentValues.TAG
 import android.net.Uri
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -11,10 +13,11 @@ import com.bumptech.glide.Glide
 import fr.ahmedbenali92.welcomee.MainActivity
 import fr.ahmedbenali92.welcomee.AppartModel
 import fr.ahmedbenali92.welcomee.R
+import fr.ahmedbenali92.welcomee.fragments.AppartRepository.Singleton.appartList
 
 class AppartAdapter(
     private val context: MainActivity,
-    private val appartList : List<AppartModel>,
+    private val appartListe : List<AppartModel>,
     private val layoutId: Int
     ) : RecyclerView.Adapter<AppartAdapter.ViewHolder>(){
     //boite pour ranger tous les composant a controler
@@ -35,7 +38,9 @@ class AppartAdapter(
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
+
         //recuperer les infos de la plante
+        Log.d(TAG, "ahmed la Value is: " + appartList.size)
         val currentAppart = appartList[position]
         //utiliser glide pour récuperer l'image depuis son lien
         Glide.with(context).load(Uri.parse(currentAppart.imageurl)).into(holder.appartImage)
@@ -56,5 +61,5 @@ class AppartAdapter(
         }
     }
 
-    override fun getItemCount(): Int = appartList.size
+    override fun getItemCount(): Int = appartListe.size
 }
