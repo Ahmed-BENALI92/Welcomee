@@ -9,21 +9,21 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import fr.ahmedbenali92.welcomee.MainActivity
-import fr.ahmedbenali92.welcomee.PlantModel
+import fr.ahmedbenali92.welcomee.AppartModel
 import fr.ahmedbenali92.welcomee.R
 
-class PlantAdapter(
+class AppartAdapter(
     private val context: MainActivity,
-    private val plantList : List<PlantModel>,
+    private val appartList : List<AppartModel>,
     private val layoutId: Int
-    ) : RecyclerView.Adapter<PlantAdapter.ViewHolder>(){
+    ) : RecyclerView.Adapter<AppartAdapter.ViewHolder>(){
     //boite pour ranger tous les composant a controler
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view)
     {
         //image de notre plant
-        val plantImage = view.findViewById<ImageView>(R.id.image_item)
-        val plantName: TextView? = view.findViewById(R.id.name_item)
-        val plantDescription: TextView? = view.findViewById(R.id.description_item)
+        val appartImage = view.findViewById<ImageView>(R.id.image_item)
+        val appartName: TextView? = view.findViewById(R.id.name_item)
+        val appartDescription: TextView? = view.findViewById(R.id.description_item)
         val starIcon : ImageView? = view.findViewById(R.id.star_icon)
     }
 
@@ -36,18 +36,18 @@ class PlantAdapter(
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         //recuperer les infos de la plante
-        val currentPlant = plantList[position]
+        val currentAppart = appartList[position]
         //utiliser glide pour récuperer l'image depuis son lien
-        Glide.with(context).load(Uri.parse(currentPlant.imageurl)).into(holder.plantImage)
+        Glide.with(context).load(Uri.parse(currentAppart.imageurl)).into(holder.appartImage)
 
         //mettre a jours le nom de la plant
-        holder.plantName?.text = currentPlant.name
+        holder.appartName?.text = currentAppart.name
 
         //mettre a jours la description
 
-        holder.plantDescription?.text = currentPlant.description
+        holder.appartDescription?.text = currentAppart.description
         //verifier si la plant a était liker ou non
-        if(currentPlant.liked)
+        if(currentAppart.liked)
         {
             holder.starIcon?.setImageResource(R.drawable.ic_star)
         }
@@ -56,5 +56,5 @@ class PlantAdapter(
         }
     }
 
-    override fun getItemCount(): Int = plantList.size
+    override fun getItemCount(): Int = appartList.size
 }

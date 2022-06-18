@@ -8,7 +8,11 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        //charger notre repository
+        val repo = AppartRepository()
 
+        //mettre a jour la liste de plante
+        repo.updateData()
         //injecter le fragment dans notre boite(fragment_container)
         val transaction = supportFragmentManager.beginTransaction()
         transaction.replace(R.id.fragment_container, HomeFragment(this))
