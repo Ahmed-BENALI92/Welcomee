@@ -13,6 +13,7 @@ import com.bumptech.glide.Glide
 import fr.ahmedbenali92.welcomee.MainActivity
 import fr.ahmedbenali92.welcomee.AppartModel
 import fr.ahmedbenali92.welcomee.R
+import fr.ahmedbenali92.welcomee.fragments.AppartRepository
 import fr.ahmedbenali92.welcomee.fragments.AppartRepository.Singleton.appartList
 
 class AppartAdapter(
@@ -42,6 +43,10 @@ class AppartAdapter(
         //recuperer les infos de la plante
         Log.d(TAG, "ahmed la Value is: " + appartList.size)
         val currentAppart = appartList[position]
+
+        //recuperer le repository
+        val repo = AppartRepository()
+
         //utiliser glide pour récuperer l'image depuis son lien
         Glide.with(context).load(Uri.parse(currentAppart.imageurl)).into(holder.appartImage)
 
@@ -58,6 +63,13 @@ class AppartAdapter(
         }
         else{
             holder.starIcon?.setImageResource(R.drawable.ic_unlike)
+        }
+        // rajouter une interraction sur l'etoile
+        holder.starIcon?.setOnClickListener{
+            //inverse si le bouton est like ou non
+            currentAppart.liked = !currentAppart.liked
+            //mettre a jour l'objet appartement
+            repo.updateAppart(currentAppart)
         }
     }
 

@@ -59,6 +59,9 @@ class AppartRepository {
 
         })
     }
-
+    //mettre à jour un objet appart en bdd
+    fun updateAppart(appart: AppartModel){
+        databaseRef.child(appart.id).setValue(appart)
+    }
 
 }
