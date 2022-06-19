@@ -17,7 +17,7 @@ import fr.ahmedbenali92.welcomee.fragments.AppartRepository
 import fr.ahmedbenali92.welcomee.fragments.AppartRepository.Singleton.appartList
 
 class AppartAdapter(
-    private val context: MainActivity,
+    val context: MainActivity,
     private val appartListe : List<AppartModel>,
     private val layoutId: Int
     ) : RecyclerView.Adapter<AppartAdapter.ViewHolder>(){
