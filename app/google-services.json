@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "638471595475",
+    "project_id": "welcomee-9bd22",
+    "storage_bucket": "welcomee-9bd22.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:638471595475:android:3f57d800e81e86cbf3bb26",
+        "android_client_info": {
+          "package_name": "fr.ahmedbenali92.welcomee"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "638471595475-df2qr4nmhsfl0vk8rtki6h6gevo81pd9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAtEuaIj5Zz-4dIK1xgCoVf0x-lYUqCt4w"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "638471595475-df2qr4nmhsfl0vk8rtki6h6gevo81pd9.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
