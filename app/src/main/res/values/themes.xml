@@ -16,8 +16,8 @@
     <!-- créer le compossant titre par defaut -->
     <style name="DefaultTextStyle">
         <item name="android:textColor">@color/lightGray</item>
-        <item name="android:textSize">18sp</item>
-        <item name="android:fontFamily">@font/kanitblack</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:fontFamily">@font/kanitbold</item>
     </style>
 
     <!-- créer le compossant titre par defaut -->
@@ -26,6 +26,6 @@
     </style>
     <!-- créer le compossant titre par defaut -->
     <style name="TitleTextStyle" parent="SubTitleTextStyle">
-        <item name="android:textSize">24sp</item>
+        <item name="android:textSize">20sp</item>
     </style>
 </resources>
