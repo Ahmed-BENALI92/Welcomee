@@ -1,1 +1,25 @@
 
+name: First GitHubaction
+
+on: [push]
+
+jobs:
+  build:
+  name: First GitHubaction
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Git checkout
+      - uses: actions/checkout@v1
+
+      - name: Set Up JDK
+        uses: actions/setup-java@v1
+        with:
+          java-version: 1.8
+
+      - name:  Tests
+        run: ./gradlew test
+
+      - name: Build Project
+        run: ./gradlew assemble
