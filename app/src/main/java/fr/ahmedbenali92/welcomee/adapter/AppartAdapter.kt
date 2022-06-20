@@ -29,7 +29,7 @@ class AppartAdapter(
         val appartImage = view.findViewById<ImageView>(R.id.image_item)
         val appartName: TextView? = view.findViewById(R.id.name_item)
         val appartDescription: TextView? = view.findViewById(R.id.description_item)
-        val starIcon : ImageView? = view.findViewById(R.id.star_icon)
+        val starIcon  = view.findViewById<ImageView>(R.id.star_icon)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -42,7 +42,7 @@ class AppartAdapter(
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
 
         //recuperer les infos de la plante
-        Log.d(TAG, "ahmed la Value is: " + appartList.size)
+        //Log.d(TAG, "ahmed la Value is: " + appartList.size)
         val currentAppart = appartList[position]
 
         //recuperer le repository
@@ -60,10 +60,10 @@ class AppartAdapter(
         //verifier si la plant a était liker ou non
         if(currentAppart.liked)
         {
-            holder.starIcon?.setImageResource(R.drawable.ic_star)
+            holder.starIcon.setImageResource(R.drawable.ic_star)
         }
         else{
-            holder.starIcon?.setImageResource(R.drawable.ic_unlike)
+            holder.starIcon.setImageResource(R.drawable.ic_unlike)
         }
         // rajouter une interraction sur l'etoile
         holder.starIcon?.setOnClickListener{
