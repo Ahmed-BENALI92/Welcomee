@@ -17,6 +17,7 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <ImageView
+            android:id="@+id/image_item"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:scaleType="centerCrop"
@@ -25,24 +26,26 @@
 
     <TextView
         android:id="@+id/popup_appart_name"
-        android:layout_width="wrap_content"
+        android:layout_width="120dp"
         android:layout_height="wrap_content"
         android:text="Appart Name"
+        android:layout_marginLeft="@dimen/default_margin"
         app:layout_constraintBottom_toBottomOf="@+id/cardView2"
         app:layout_constraintStart_toEndOf="@+id/cardView2"
         app:layout_constraintTop_toTopOf="@+id/cardView2"
-        style="@style/SubTitleTextStyle"
-        android:layout_marginLeft="30dp"/>
+        style="@style/Name_popup_Appart"
+         />
 
     <ImageView
         android:id="@+id/close_button"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginRight="70dp"
         android:src="@drawable/ic_close"
         app:layout_constraintBottom_toBottomOf="@+id/cardView2"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/cardView2"
-        android:layout_marginRight="@dimen/default_margin"/>
+
+        app:layout_constraintTop_toTopOf="@+id/cardView2" />
 
     <TextView
         android:id="@+id/popu_appart_description_title"

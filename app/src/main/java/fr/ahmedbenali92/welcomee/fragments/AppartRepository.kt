@@ -64,4 +64,6 @@ class AppartRepository {
         databaseRef.child(appart.id).setValue(appart)
     }
 
+    //supprimer une appart de la base de donnée
+    fun deleteAppart(appart: AppartModel) = databaseRef.child(appart.id).removeValue()
 }

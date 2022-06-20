@@ -28,4 +28,8 @@
     <style name="TitleTextStyle" parent="SubTitleTextStyle">
         <item name="android:textSize">20sp</item>
     </style>
+    <style name="Name_popup_Appart" parent="DefaultTextStyle">
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">18sp</item>
+    </style>
 </resources>

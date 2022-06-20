@@ -76,7 +76,7 @@ class AppartAdapter(
         // nouvelle intéraction lors d'un clic sur un appart
         holder.itemView.setOnClickListener {
             //afficher la popup
-            AppartPopup(this).show()
+            AppartPopup(this,currentAppart).show()
         }
     }
 
