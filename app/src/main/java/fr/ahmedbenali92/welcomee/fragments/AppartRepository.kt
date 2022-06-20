@@ -15,6 +15,7 @@ import com.google.firebase.storage.UploadTask
 import fr.ahmedbenali92.welcomee.AppartModel
 import fr.ahmedbenali92.welcomee.fragments.AppartRepository.Singleton.appartList
 import fr.ahmedbenali92.welcomee.fragments.AppartRepository.Singleton.databaseRef
+import fr.ahmedbenali92.welcomee.fragments.AppartRepository.Singleton.downloadUri
 import fr.ahmedbenali92.welcomee.fragments.AppartRepository.Singleton.storageReference
 import java.net.URI
 import java.util.*
@@ -25,6 +26,8 @@ class AppartRepository {
 
     //on va utilisé le pattern singleton
     object Singleton {
+
+        // donner le lien pour acceder au bucket
         private val BUCKET_URL: String ="gs://welcomee-9bd22.appspot.com"
 
         // se connecter a notre espace de stockage
@@ -37,6 +40,9 @@ class AppartRepository {
 
         //creer un liste pour stocker nos appartement
         val appartList = arrayListOf<AppartModel>()
+
+        //contenir le lien de l'image courante
+        var downloadUri :Uri? = null
     }
 
     fun updateData(callback : () -> Unit){
@@ -74,7 +80,7 @@ class AppartRepository {
     }
 
     //créer une fonction qui va envoyer des fichiers sur le storage
-    fun uploadImage(file: Uri) {
+    fun uploadImage(file: Uri, callback: () -> Unit) {
         // verifier que ce fichier n'est pas null
         if(file != null)
         {
@@ -96,7 +102,8 @@ class AppartRepository {
                 if(task.isSuccessful)
                 {
                     //recuperer l'image
-                    val downloadUri= task.result
+                     downloadUri = task.result
+                    callback()
                 }
             }
         }
@@ -106,6 +113,10 @@ class AppartRepository {
     fun updateAppart(appart: AppartModel){
         databaseRef.child(appart.id).setValue(appart)
     }
+
+    //inserer un nouvelle appartement
+
+    fun insertAppart(appart: AppartModel) = databaseRef.child(appart.id).setValue(appart)
 
     //supprimer une appart de la base de donnée
     fun deleteAppart(appart: AppartModel) = databaseRef.child(appart.id).removeValue()
