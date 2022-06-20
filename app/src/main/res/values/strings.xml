@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">Welcomee</string>
+    
+    <string name="bottom_home_item">Acceuil</string>
+    <string name="bottom_collection_item">Favoris</string>
+    <string name="bottom_add_appart_item">Ajouter</string>
+    <string name="home_page_title">A découvrir</string>
+    <string name="Collection_page_title">Vos favorie</string>
+    <string name="add_appart_page_title">Ajouter un Appartement</string>
 </resources>

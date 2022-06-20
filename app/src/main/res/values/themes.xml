@@ -35,4 +35,16 @@
     <style name="input_add_appart" parent="DefaultTextStyle">
         <item name="android:textColor">@color/black</item>
     </style>
+
+    <!-- créer un style pour la bottom navigation view -->
+    <style name="BottomNavigationStyle" parent ="Widget.Design.BottomNavigationView">
+        <item name="android:textSize">18sp</item>
+        <item name="android:fontFamily">@font/kanitbold</item>
+    </style>
+
+    <!-- personnaliser la barre de navigation -->
+    <style name="BottomNavigationTheme" parent ="Widget.Design.BottomNavigationView">
+        <item name="android:textSize">18sp</item>
+        <item name="android:fontFamily">@font/kanitbold</item>
+    </style>
 </resources>

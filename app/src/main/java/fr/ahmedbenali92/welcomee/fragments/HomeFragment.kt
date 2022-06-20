@@ -24,11 +24,8 @@ class HomeFragment(
 
         //recuperer le recyclerview
         val horizontalRecyclerView = view?.findViewById<RecyclerView>(R.id.horizontal_recycler_view)
-        if (horizontalRecyclerView != null) {
+        horizontalRecyclerView?.adapter = AppartAdapter(context ,appartList,R.layout.item_horizental_plant)
 
-            //Log.d(TAG, "ahmed la Value is: " + appartList.size)
-            horizontalRecyclerView.adapter = AppartAdapter(context ,appartList,R.layout.item_horizental_plant)
-        }
 
         // recuperer le second recyclerview
         val verticalRecyclerView = view?.findViewById<RecyclerView>(R.id.vertical_recycler_view)
