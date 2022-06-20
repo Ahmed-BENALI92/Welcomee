@@ -12,6 +12,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import fr.ahmedbenali92.welcomee.MainActivity
 import fr.ahmedbenali92.welcomee.AppartModel
+import fr.ahmedbenali92.welcomee.AppartPopup
 import fr.ahmedbenali92.welcomee.R
 import fr.ahmedbenali92.welcomee.fragments.AppartRepository
 import fr.ahmedbenali92.welcomee.fragments.AppartRepository.Singleton.appartList
@@ -71,7 +72,14 @@ class AppartAdapter(
             //mettre a jour l'objet appartement
             repo.updateAppart(currentAppart)
         }
+
+        // nouvelle intéraction lors d'un clic sur un appart
+        holder.itemView.setOnClickListener {
+            //afficher la popup
+            AppartPopup(this).show()
+        }
     }
+
 
     override fun getItemCount(): Int = appartListe.size
 }
