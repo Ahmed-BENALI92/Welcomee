@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:background="@color/white"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <Button
+            android:id="@+id/upload_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Charger Image"
+            android:background="@color/purple"
+            style="@style/TitleTextStyle"
+            android:textColor="@color/white"
+            android:padding="@dimen/default_margin"/>
+        <ImageView
+            android:id="@+id/preview_image"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            android:src="@drawable/test"/>
+    </LinearLayout>
+
+    <EditText
+        android:id="@+id/name_input"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:hint="Nom de l'appartement"
+        android:textColorHint="@color/lightGray"
+        style="@style/DefaultTextStyle"
+        android:paddingLeft="@dimen/default_margin"
+        android:layout_marginTop="@dimen/item_margin"/>
+    <EditText
+        android:id="@+id/description_input"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:hint="Description de l'appartement"
+        android:textColorHint="@color/lightGray"
+        style="@style/DefaultTextStyle"
+        android:paddingLeft="@dimen/default_margin"
+        android:layout_marginTop="@dimen/item_margin"/>
+    <EditText
+        android:id="@+id/adresse_input"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:hint="Adresse de l'appartement"
+        android:textColorHint="@color/lightGray"
+        style="@style/DefaultTextStyle"
+        android:paddingLeft="@dimen/default_margin"
+        android:layout_marginTop="@dimen/item_margin"/>
+    <EditText
+        android:id="@+id/name_proprio_input"
+        android:layout_width="match_parent"
+        android:textColorHint="@color/lightGray"
+        android:layout_height="60dp"
+        android:hint="Nom du hôte"
+        style="@style/DefaultTextStyle"
+        android:paddingLeft="@dimen/default_margin"
+        android:layout_marginTop="@dimen/item_margin"/>
+
+    <Button
+        android:id="@+id/confirm_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:text="Confirme"
+        android:textSize="24dp"
+        android:layout_marginLeft="80dp"
+        android:layout_marginTop="@dimen/default_margin"
+        />
+
+</LinearLayout>

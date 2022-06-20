@@ -19,7 +19,7 @@ class CollectionFragment(
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val view = inflater?.inflate(R.layout.fragment_collection,container,false)
+        val view = inflater.inflate(R.layout.fragment_collection,container,false)
 
         //recuper ma recyclerview
 

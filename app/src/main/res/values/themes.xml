@@ -32,4 +32,7 @@
         <item name="android:textColor">@color/black</item>
         <item name="android:textSize">18sp</item>
     </style>
+    <style name="input_add_appart" parent="DefaultTextStyle">
+        <item name="android:textColor">@color/black</item>
+    </style>
 </resources>

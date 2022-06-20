@@ -2,6 +2,7 @@ package fr.ahmedbenali92.welcomee
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import fr.ahmedbenali92.welcomee.fragments.AddAppartFragment
 import fr.ahmedbenali92.welcomee.fragments.AppartRepository
 import fr.ahmedbenali92.welcomee.fragments.HomeFragment
 
@@ -16,7 +17,7 @@ class MainActivity : AppCompatActivity() {
         repo.updateData{
             //injecter le fragment dans notre boite(fragment_container)
             val transaction = supportFragmentManager.beginTransaction()
-            transaction.replace(R.id.fragment_container, CollectionFragment(this))
+            transaction.replace(R.id.fragment_container, AddAppartFragment(this))
             transaction.addToBackStack(null)
             transaction.commit()
         }
