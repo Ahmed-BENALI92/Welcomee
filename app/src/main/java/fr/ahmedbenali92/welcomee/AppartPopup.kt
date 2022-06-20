@@ -21,6 +21,32 @@ class AppartPopup(
         setupComponents()
         setupCloseButton()
         setupDeleteButton()
+        setupStartButton()
+    }
+
+    private fun upDateStar(button: ImageView){
+        if(currentAppart.liked)
+        {
+            button.setImageResource(R.drawable.ic_star)
+        }
+        else{
+            button.setImageResource(R.drawable.ic_unlike)
+        }
+    }
+
+    private fun setupStartButton() {
+
+        //Recuper notre starbutton
+        val starButton = findViewById<ImageView>(R.id.start_button)
+        upDateStar(starButton)
+        //interaction
+        starButton.setOnClickListener{
+            currentAppart.liked = !currentAppart.liked
+            val repo = AppartRepository()
+            repo.updateAppart(currentAppart)
+            upDateStar(starButton)
+
+        }
     }
 
     private fun setupDeleteButton() {
