@@ -16,7 +16,7 @@ class MainActivity : AppCompatActivity() {
         repo.updateData{
             //injecter le fragment dans notre boite(fragment_container)
             val transaction = supportFragmentManager.beginTransaction()
-            transaction.replace(R.id.fragment_container, HomeFragment(this))
+            transaction.replace(R.id.fragment_container, CollectionFragment(this))
             transaction.addToBackStack(null)
             transaction.commit()
         }
