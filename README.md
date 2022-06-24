@@ -23,7 +23,7 @@ Getting Started
 Installation
 Clone the repo
 
-git clone https://github.com/JialeiSUN/Wellcome
+git clone https://github.com/Ahmed-BENALI92/Welcomee
 Build with gradle
 
 gradle build
@@ -44,5 +44,12 @@ Distributed under the MIT License. See LICENSE for more information.
 Contact
 Wellcome - WellcomeMyContact@gmail.com
 
+ Nous avons jugé necesaire de reprendre le projet pour une comprehension globale 
+ on peut ajouter un logement 
+supprimer 
+ajouter dans la liste des favoris 
+ suprimer dans la liste des  favoris 
+
+la base de donnée est firebase pour sa simplicité 
 
 
